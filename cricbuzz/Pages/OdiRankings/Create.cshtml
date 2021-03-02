@@ -1,0 +1,41 @@
+﻿@page
+@model cricbuzz.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1 class="text-center">Add ODI Ranking Details</h1>
+<hr />
+<div class="row">
+    <div class="col-md-12">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="OdiRanking.PlayerName" class="control-label"></label>
+                <input asp-for="OdiRanking.PlayerName" class="form-control" />
+                <span asp-validation-for="OdiRanking.PlayerName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="OdiRanking.Rating" class="control-label"></label>
+                <input asp-for="OdiRanking.Rating" class="form-control" />
+                <span asp-validation-for="OdiRanking.Rating" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="OdiRanking.CountryId" class="control-label"></label>
+                <select asp-for="OdiRanking.CountryId" class ="form-control" asp-items="ViewBag.CountryId"></select>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">View ODI Ranking</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

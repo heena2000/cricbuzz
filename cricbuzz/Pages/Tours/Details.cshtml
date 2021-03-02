@@ -1,0 +1,42 @@
+﻿@page
+@model cricbuzz.Tours.DetailsModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1 class="text-center">Tour Details</h1>
+
+<div>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Tour.TourName)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Tour.TourName)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Tour.Description)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Tour.Description)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Tour.Period)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Tour.Period)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Tour.Country)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Tour.Country.CountryName)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-page="./Edit" class="btn btn-secondary" asp-route-id="@Model.Tour.Id">Edit</a> |
+    <a asp-page="./Index">View All Tours</a>
+</div>

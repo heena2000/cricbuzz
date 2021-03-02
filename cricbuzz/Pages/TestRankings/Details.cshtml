@@ -1,0 +1,36 @@
+﻿@page
+@model cricbuzz.TestRankings.DetailsModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1 class="text-center">Test Ranking Details</h1>
+
+<div>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TestRanking.PlayerName)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TestRanking.PlayerName)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TestRanking.Rating)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TestRanking.Rating)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TestRanking.Country)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TestRanking.Country.CountryName)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-page="./Edit" class="btn btn-secondary" asp-route-id="@Model.TestRanking.Id">Edit</a> |
+    <a asp-page="./Index">View Test Rankings</a>
+</div>

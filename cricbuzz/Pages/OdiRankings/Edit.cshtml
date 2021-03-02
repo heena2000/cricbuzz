@@ -1,0 +1,43 @@
+﻿@page
+@model cricbuzz.OdiRankings.EditModel
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1 class="text-center">Edit ODI Ranking Details</h1>
+<hr />
+<div class="row">
+    <div class="col-md-12">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="OdiRanking.Id" />
+            <div class="form-group">
+                <label asp-for="OdiRanking.PlayerName" class="control-label"></label>
+                <input asp-for="OdiRanking.PlayerName" class="form-control" />
+                <span asp-validation-for="OdiRanking.PlayerName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="OdiRanking.Rating" class="control-label"></label>
+                <input asp-for="OdiRanking.Rating" class="form-control" />
+                <span asp-validation-for="OdiRanking.Rating" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="OdiRanking.CountryId" class="control-label"></label>
+                <select asp-for="OdiRanking.CountryId" class="form-control" asp-items="ViewBag.CountryId"></select>
+                <span asp-validation-for="OdiRanking.CountryId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="./Index">View ODI Rankings</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

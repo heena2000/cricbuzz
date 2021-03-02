@@ -1,0 +1,37 @@
+﻿@page
+@model cricbuzz.TestRankings.DeleteModel
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h1 class="text-center">Are you sure you want to delete this?</h1>
+<div>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TestRanking.PlayerName)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TestRanking.PlayerName)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TestRanking.Rating)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TestRanking.Rating)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TestRanking.Country)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TestRanking.Country.Id)
+        </dd>
+    </dl>
+    
+    <form method="post">
+        <input type="hidden" asp-for="TestRanking.Id" />
+        <input type="submit" value="Delete" class="btn btn-danger" /> |
+        <a asp-page="./Index">View Test Rankings</a>
+    </form>
+</div>

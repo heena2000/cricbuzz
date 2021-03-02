@@ -1,0 +1,25 @@
+﻿@page
+@model cricbuzz.Countries.DetailsModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+    <h1 class="text-center">Country Details</h1>
+
+<div>
+    <h4>Country</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Country.CountryName)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Country.CountryName)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-page="./Edit" class="btn btn-secondary" asp-route-id="@Model.Country.Id">Edit</a> |
+    <a asp-page="./Index">View All Countries</a>
+</div>

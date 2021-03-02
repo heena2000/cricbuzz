@@ -1,0 +1,31 @@
+﻿@page
+@model cricbuzz.Tours.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1 class="text-center">View All Tours</h1>
+
+<p>
+    <a asp-page="Create" class="btn btn-primary">Add New Tour</a>
+</p>
+<div class="row">
+    @foreach (var item in Model.Tour)
+    {
+        <div class="col-4">
+            <div class="card mb-2">
+                <div class="card-header bg-secondary"><h4>@Html.DisplayFor(modelItem => item.TourName)</h4></div>
+                <div class="card-body">
+                    <h5>@Html.DisplayFor(modelItem => item.Description)</h5>
+                    <h6>@Html.DisplayFor(modelItem => item.Period)</h6>
+                </div>
+                <div class="card-footer">
+                    <a asp-page="./Edit" class="btn btn-secondary" asp-route-id="@item.Id">Edit</a> |
+                    <a asp-page="./Details" class="btn btn-success" asp-route-id="@item.Id">Details</a> |
+                    <a asp-page="./Delete" class="btn btn-warning" asp-route-id="@item.Id">Delete</a>
+                </div>
+            </div>
+        </div>
+    }
+</div>
